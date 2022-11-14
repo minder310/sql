@@ -18,8 +18,8 @@
     // PDO(資料庫相關設定，帳號，密碼。)
     $pdo=new PDO($dsn,'root','');
 
-    // 機料庫的基本語法。
-    $sql="SELECT * FROM `students` LIMIT 5";
+    // 機料庫的基本語法。limt 數值，只顯示多少資料。
+    $sql="SELECT * FROM `students` LIMIT 20";
 
     // 將資料送進資料庫，query查詢，fetchAll()拿全部的資料，>瘦箭頭,PDO::是只要取用的資料是哪種，盡量減少資料傳輸FETCH:ASSOC,NAMED 。
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
@@ -28,6 +28,19 @@
     print_r($rows);
     echo "</pre>";
     ?>
+    <table>
+        <?php
+        foreach($rows as $row)
+        {
+            echo "<tr>";
+            echo "<td>{$row['school_num']}</td>";
+            echo "<td>{$row['name']}</td>";
+            echo "<td>{$row['birthdsy']}</td>";
+            echo "<td>{$row['graduate_at']}</td>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
 </body>
 
 </html>
