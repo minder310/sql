@@ -19,4 +19,7 @@ $res=$pdo->query($sql);
     $res=$pdo->exec($sql);
     echo "刪除成功:".$res;
 
+    // 導向
+    header("location:../index.php")
+
 ?>

@@ -12,6 +12,12 @@
 <body>
     <h1>學生管理系統</h1>
     <nav>
+    <?php
+    if(isset($_GET['status']))
+    ?>
+
+    </nav>
+    <nav>
         <a href="add.php">新增學生</a>
         <a href="reg.php">教師註冊</a>
         <a href="login.php">教師登入</a>
